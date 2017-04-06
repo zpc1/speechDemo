@@ -124,6 +124,8 @@ public class tts implements SpeechSynthesizerListener{
         this.mSpeechSynthesizer = SpeechSynthesizer.getInstance();
         this.mSpeechSynthesizer.setContext(context);
         this.mSpeechSynthesizer.setSpeechSynthesizerListener(this);
+
+
         // 文本模型文件路径 (离线引擎使用)
         this.mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_TEXT_MODEL_FILE, mSampleDirPath + "/"
                 + TEXT_MODEL_NAME);

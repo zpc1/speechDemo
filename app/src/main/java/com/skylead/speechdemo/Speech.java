@@ -52,9 +52,8 @@ public class Speech  implements RecognitionListener{
         intent.putExtra("sound_success", 0);//识别成功的提示音
         intent.putExtra("sound_error", 0);//识别出错的提示音
         intent.putExtra("nlu", "enable");//开启语义解析
-        intent.putExtra("nlu", "enable");//开启语义解析
+
         intent.putExtra("prop", prop); // 地图
-        intent.putExtra("asr-base-file-path", "/sdcard/s_1");
         if (prop == 10060) { // 地图
             intent.putExtra("lm-res-file-path", "/sdcard/s_2_Navi");
         } else if (prop == 20000) { // 输入法
