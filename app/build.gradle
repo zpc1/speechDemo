@@ -33,4 +33,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/android-support-v4.jar')
     compile files('libs/com.baidu.tts_2.3.0.jar')
+    compile files('libs/org.apache.http.legacy.jar')
 }
