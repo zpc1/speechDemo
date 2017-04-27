@@ -9,11 +9,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
     <application
         android:allowBackup="true"
@@ -61,8 +59,7 @@
         </activity>
         <!-- end : baidu speech sdk -->
 
-
-        <activity android:name=".MainActivity">
+        <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -70,13 +67,14 @@
             </intent-filter>
         </activity>
 
-
-
         <service
             android:name=".MyService"
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <!--<activity android:name=".Main2Activity">-->
+        <!--</activity>-->
     </application>
 
 </manifest>

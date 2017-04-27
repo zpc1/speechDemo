@@ -33,7 +33,7 @@ public class ConnectUtil {
                     HttpClient httpClient = new DefaultHttpClient();
                     // 指定访问的服务器地址是电脑本机
                     //					HttpGet httpGet = new HttpGet("http://10.0.2.2/get_data.json");
-                    String url = "http://139.224.237.6:8081/?name="+cmd;
+                    String url = "http://139.224.237.6:9006/query/"+cmd;
                     HttpGet httpGet = new HttpGet(url);
                     HttpResponse httpResponse = httpClient.execute(httpGet);
                     if (httpResponse.getStatusLine().getStatusCode() == 200) {
@@ -54,6 +54,7 @@ public class ConnectUtil {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
+                    listen.onResult(e.toString());
                 }
             }
         }).start();

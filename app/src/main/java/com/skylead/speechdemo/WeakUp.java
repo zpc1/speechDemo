@@ -38,11 +38,11 @@ public class WeakUp {
                     if ("wp.data".equals(name)) { // 每次唤醒成功, 将会回调name=wp.data的时间, 被激活的唤醒词在params的word字段
 
                         String word = json.getString("word");
-                        if (myspeech == null) {
-                            myspeech = new Speech(context);
-                        }
-                        myspeech.speech_Init();
-                        myspeech.startASR();
+//                        if (myspeech == null) {
+//                            myspeech = new Speech(context);
+//                        }
+//                        myspeech.speech_Init();
+//                        myspeech.startASR();
                         //                        txtLog.append("唤醒成功, 唤醒词: " + word + "\r\n");
                     } else if ("wp.exit".equals(name)) {
                         //                        txtLog.append("唤醒已经停止: " + params + "\r\n");
