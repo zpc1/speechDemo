@@ -249,7 +249,7 @@ public class Speech implements HttpListen {
         }
     }
 
-    private String getResult(String original) {
+    public static String getResult(String original) {
         JSONObject json = null;
         StringBuffer result = new StringBuffer();
         try {
@@ -259,6 +259,7 @@ public class Speech implements HttpListen {
             if (id_text!= null){
                 id_text = URLDecoder.decode(id_text);
             }
+            int code = json.has("code")?json.getInt("code"):-1;//是否成功
             String domain = json.has("domain")?json.getString("domain"):null;
             String raw_text = json.has("raw_text")?json.getString("raw_text"):null;
             if (raw_text!= null){
@@ -267,9 +268,11 @@ public class Speech implements HttpListen {
             String pinyin = json.has("pinyin")?json.getString("pinyin"):null;
             int id = json.has("id")?json.getInt("id"):0;
             String score = json.has("score")?json.getString("score"):null;
+            String end = json.has("end")?json.getString("end"):null;
 
-            return type+ " | " +id_text+ " | " + domain + " | "
-                    + raw_text + " | " + pinyin + " | "
+
+            return code + " | "+type+ " | " +id_text+ " | " + domain + " | "
+                    + raw_text + " | " + end + " | "+ pinyin + " | "
                     +id + " | " + score;
         } catch (JSONException e) {
             e.printStackTrace();
