@@ -24,6 +24,7 @@ import com.skylead.speechdemo.Util.ConnectUtil;
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener, HttpListen {
     private Button speechBtn = null;
     private Button search_btn = null;
+    private Button clear_btn = null;
     private TextView mShowText = null;
     private EditText mEditText = null;
     private Speech myspeech = null;
@@ -85,6 +86,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         this.search_btn = (Button) this.findViewById(R.id.search);
         this.search_btn.setOnClickListener(this);
         this.mEditText = (EditText) this.findViewById(R.id.input_text);
+        this.clear_btn = (Button) this.findViewById(R.id.clear);
+        clear_btn.setOnClickListener(this);
 
     }
 
@@ -105,6 +108,11 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 }else {
                     Toast.makeText(getApplicationContext(),"请输入要查询的字符或通过语音输入",Toast.LENGTH_SHORT);
                 }
+                break;
+            case R.id.clear:
+                logbuf.delete(0,logbuf.length());
+                logbuf.append("语音命令解析Demo:");
+                mShowText.setText(logbuf.toString());
                 break;
 
         }
